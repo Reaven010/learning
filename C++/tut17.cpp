@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+//forward declaration
 int product(int,int);
 
 
