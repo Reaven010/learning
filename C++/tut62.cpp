@@ -15,6 +15,7 @@ int main(){
     in.open("sample60.txt");
     // in>>st>>st2;
     // cout<<st<<st2;
+    
     while (in.eof()==0){
         getline(in,st);
         cout<<st<<endl;
