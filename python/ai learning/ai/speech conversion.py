@@ -3,6 +3,8 @@ import pyttsx3 # text data to speech
 import datetime
 from pytube import YouTube
 import vlc
+import os
+
 
 # Capture audio from the microphone
 def speech_to_text(timeout=10, phrase_time_limit=None):
@@ -30,7 +32,11 @@ def speech_to_text(timeout=10, phrase_time_limit=None):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-    
+def play_music():
+    player = vlc.MediaPlayer("python/ai/Mehrama - Pritam.mp3")
+    player.play()
+    input("Press Enter to stop the music...")
+    player.stop()
 engine = pyttsx3.init()
 def speak(text):
     engine.say(text)
@@ -94,27 +100,14 @@ try:
             speak("hello there sir this is raven, how may i serve you today ?")
         elif text =="what are you raven" or text=="tell me about youself":
             speak("i am an artificial integence developed by sayujya here to serve you sir")
-        elif text=="time"or text =="what is current time":
+        elif text=="time"or text =="what is current time" or text == "current time":
             time()
         elif text == "date" or text =="what's current date" or text =="current date":
             date()
-        elif text == "play meherma" or text == "meherma" or text =="play":
-            # Create a VLC media player instance
-            player = vlc.MediaPlayer("python/ai/Mehrama - Pritam.mp3")
-
-            # Play the music
-            player.play()
-            input("Press Enter to stop the music...")
-            player.stop()
-        elif text=="play Tera Ghata":
-            # Create a VLC media player instance
-            player = vlc.MediaPlayer("python/ai/spotifydown.com - Tera Ghata - Gajendra Verma.mp3")
-
-            # Play the music
-            player.play()
-            input("Press Enter to stop the music...")
-            player.stop()
-
+        elif text == "play music":
+            play_music()
+        elif text == "arm motion":
+            os.system("python/ai/motion_detection.py")
         elif text == "stop" or text == "shutdown" or text =="kill":
             break
     
