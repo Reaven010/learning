@@ -33,7 +33,7 @@ def speech_to_text(timeout=10, phrase_time_limit=None):
         print(f"An error occurred: {e}")
         return None
 def play_music():
-    player = vlc.MediaPlayer("python/ai/Mehrama - Pritam.mp3")
+    player = vlc.MediaPlayer("learning/python/ai learning/ai/Mehrama - Pritam.mp3")
     player.play()
     input("Press Enter to stop the music...")
     player.stop()
@@ -106,8 +106,6 @@ try:
             date()
         elif text == "play music":
             play_music()
-        elif text == "arm motion":
-            os.system("python/ai/motion_detection.py")
         elif text == "stop" or text == "shutdown" or text =="kill":
             break
     
