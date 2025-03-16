@@ -100,15 +100,7 @@ try:
             date()
         elif text == "play meherma" or text == "meherma" or text =="play":
             # Create a VLC media player instance
-            player = vlc.MediaPlayer("python/ai/Mehrama - Pritam.mp3")
-
-            # Play the music
-            player.play()
-            input("Press Enter to stop the music...")
-            player.stop()
-        elif text=="play Tera Ghata":
-            # Create a VLC media player instance
-            player = vlc.MediaPlayer("python/ai/spotifydown.com - Tera Ghata - Gajendra Verma.mp3")
+            player = vlc.MediaPlayer("learning/python/ai learning/Mehrama - Pritam.mp3")
 
             # Play the music
             player.play()
