@@ -19,7 +19,9 @@ bool divide(vector<int>arr){
     }
     return 0;
 }
+
 int main(){
+
     int n;
     cout<<"enter the siz eof array : "<<endl;
     cin >>n;
@@ -28,6 +30,7 @@ int main(){
         cin>>v[i]; 
     }
     cout<<divide(v);
-
+    
     return 0;
+
 }
