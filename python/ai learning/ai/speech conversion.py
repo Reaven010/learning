@@ -98,9 +98,9 @@ try:
     while text !="stop"or "shutdown":
         if text == "hello" or text == "wake up" or text == "arise":
             speak("hello there sir this is raven, how may i serve you today ?")
-        elif text =="what are you raven" or text=="tell me about youself":
-            speak("i am an artificial integence developed by sayujya here to serve you sir")
-        elif text=="time"or text =="what is current time" or text == "current time":
+        elif text =="what are you raven" or text=="tell me about yourself":
+            speak("i am an artificial intelegence developed by sayujya here to serve you sir")
+        elif text=="time"or text =="what's current time" or text == "current time":
             time()
         elif text == "date" or text =="what's current date" or text =="current date":
             date()

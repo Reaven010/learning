@@ -19,7 +19,7 @@ def beep():
         if not alarm_mode:
             break
         print("ALARM!!!")
-        winsound.Beep(1000,1000)#2500
+        winsound.Beep(2500,2500)#2500
     alarm =False
 while True:
     _,frame =cap.read()
