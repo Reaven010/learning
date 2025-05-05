@@ -61,5 +61,8 @@ int main(){
     return 0;
 }
 
+
+//indexing in 2d vector
+//index = row*coloumn + coloumn
 // row = index/coloumn
 // coloumn = index%coloumn
