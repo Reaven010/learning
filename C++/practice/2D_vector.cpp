@@ -60,3 +60,6 @@ int main(){
     
     return 0;
 }
+
+// row = index/coloumn
+// coloumn = index%coloumn
