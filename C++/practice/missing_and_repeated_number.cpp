@@ -74,7 +74,37 @@ void occurence_of_number(vector<int> arr){
         cout<<i+1<<" occurs "<<arr[i]/n<<" times"<<endl;
     }
 }
+int majorityElement(vector<int>& nums) {
+    //done using moore voting algorithm
+    int n=nums.size(); 
+    int cand,count=0;
+    for (int i =0;i<n;i++){
+        if (count==0){
+            cand=nums[i];
+        }
+        if (cand==nums[i]){
+            count++;
+        }
+        else{
+            if (cand==nums[i]){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        cout <<"count is " <<count<<endl;
+    }
+    cout<<"cand is " <<cand<<endl;
+    //for varification
+    for (int i=0;i<n;i++){
+        if (nums[i]==cand){count++;}
+    }
+    if (count>n/2){return cand;}
+    else{return -1;}
+}
 int main(){
-    
+    vector<int> arr={3,3,4};
+    cout<<majorityElement(arr)<<endl;
     return 0;
 }
