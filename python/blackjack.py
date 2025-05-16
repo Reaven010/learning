@@ -94,5 +94,6 @@ while (play_again):
     play_again = input("Do you want to play again? (y/n): ")
     if play_again.lower() == 'y':
         play_again = True
+        main_deck = shuffel_deck(deck)
     else:
         play_again = False
