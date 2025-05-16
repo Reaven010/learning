@@ -71,6 +71,9 @@ while (play_again):
             if player_score > 21:
                 print("You busted! Dealer wins.")
                 break
+            if len(player_hand) == 5 and player_score <= 21:
+                print("You win with a five-card hand!")
+                break
         elif action == 's':
             break
         else:
