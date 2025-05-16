@@ -60,6 +60,9 @@ while (play_again):
     while player_score < 21:
         print("dealer score is : ",dealer_score)
         print("player score is : ",player_score)
+        if player_score == 21:
+            print("Blackjack! You win!")
+            break
         action = input("Do you want to hit or stand? (h/s): ")
         if action == 'h':
             player_hand.append(deal_card(main_deck))
