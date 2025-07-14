@@ -15,5 +15,5 @@ int gcd (int a,int b){
 }
 int main() {
     cout<<"gcd is "<<gcd (70,35)<<endl;
-    cout<<"gcd is "<<gcd (90,15)<<endl;
+    cout<<"gcd is "<<gcd (101,25)<<endl;
 }
