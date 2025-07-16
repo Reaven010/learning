@@ -44,8 +44,8 @@ int main() {
     int front=-1,rear=-1;
     enqueue(queue, 10, 7, front, rear);
     enqueue(queue, 20, 7, front, rear);
-    enqueue(queue, 30, 7, front, rear);
-    display(queue, front, rear);
     dequeue(queue, front, rear, 7);
+    dequeue(queue, front, rear, 7);
+    enqueue(queue, 30, 7, front, rear);
     dequeue(queue, front, rear, 7);
 }

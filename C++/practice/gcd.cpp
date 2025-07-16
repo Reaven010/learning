@@ -14,6 +14,10 @@ int gcd (int a,int b){
     return a;
 }
 int main() {
-    cout<<"gcd is "<<gcd (70,35)<<endl;
-    cout<<"gcd is "<<gcd (101,25)<<endl;
+    int m,n;
+    cin>>m;
+    cin>>n;
+
+    cout<<"gcd is "<<gcd (m,n)<<endl;
+    
 }
