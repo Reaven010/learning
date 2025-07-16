@@ -35,9 +35,9 @@ int main() {
     int top=-1;
     push(arr,top,5);
     push(arr,top,5);
-    push(arr,top,5);
-    display(arr,top);
     pop(arr,top,5);
-    peek(arr,top);
+    push(arr,top,5);
+    pop(arr,top,5);
+    pop(arr,top,5);
 
 }
