@@ -8,6 +8,7 @@ public class average {
         num1=sc.nextInt();
         num2=sc.nextInt();
         num3=sc.nextInt();
+        //average=sum of outcomes/total values
         average=(num1+num2+num3)/3;
         System.out.println("average is : "+average);
         sc.close();
