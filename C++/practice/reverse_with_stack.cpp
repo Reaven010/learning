@@ -30,6 +30,7 @@ int stack[3];
 for (int i =0;i<3;i++){
     push(stack, top, 3,arr[i]);
 }
+    //for showing result
 for (int i=0;i<3;i++){
     pop(stack, top, 3);   
 }
