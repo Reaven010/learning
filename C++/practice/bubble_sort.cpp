@@ -6,7 +6,7 @@ using namespace std;
 void bubble_sort_asc(vector<int> &arr){
     for (int i=0;i<arr.size();i++){
         bool flag=false;
-        for (int j=0;j<arr.size()-1;j++){
+        for (int j=0;j<arr.size()-i-1;j++){
             if (arr[j]>arr[j+1]){
                 swap(arr[j],arr[j+1]);
                 flag=true;
@@ -22,7 +22,7 @@ void bubble_sort_asc(vector<int> &arr){
 void bubble_sort_dsc(vector<int> &arr){
     for (int i=0;i<arr.size();i++){
         bool flag=false;
-        for (int j=0;j<arr.size()-1;j++){
+        for (int j=0;j<arr.size()-i-1;j++){
             if (arr[j]<arr[j+1]){
                 swap(arr[j],arr[j+1]);
                 flag=true;
