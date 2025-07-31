@@ -23,3 +23,14 @@ int main(){
     }
     return 0;
 }
+void insertionSort(int arr[],int n){
+    for (int j=1;j<n;j++){
+        int key=arr[j];
+        int i=j-1;
+        while(i>=0 && arr[j]>key){
+            arr[i+1]=arr[i];
+            i--;
+        }
+        arr[i+1]=key;
+    }
+}
