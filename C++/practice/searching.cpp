@@ -27,5 +27,8 @@ int binaryy_search(int arr[],int key,int size){
 }
 
 int main() {
-    
+    int arr[5]={1,2,3,4,5};
+    cout<<"using linear search value found at \t"<<binaryy_search(arr,3,5)<<endl;
+    int arr2[5]={32,56,22,256,1};
+    cout<<"using binary search value found at \t"<<linear_search(arr2,256,5)<<endl;
 }
