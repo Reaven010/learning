@@ -10,8 +10,16 @@ struct linked_list
     char name[30];
     struct linked_list * next;
 };
+struct node{
+    int data;
+    struct node *nextnode;
+};
 
-
+void createlist(int n){
+    struct node*newnode,*temp;
+    int data,i;
+    newnode = (struct node *)malloc(sizeof(struct node));
+}
 int main() {
     struct linked_list n1,n2,n3;
     cout<<"enter details of students in following secuence rollno. name "<<endl;
