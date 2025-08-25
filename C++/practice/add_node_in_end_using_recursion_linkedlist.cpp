@@ -49,6 +49,55 @@ void insert(Node *head,int x,int value){
     temp->next=t1;
 }
 
+void deleteNodeStart(Node *&head){
+    if (head!=NULL){
+        Node * temp=head;
+        head=head->next;
+        delete temp;
+    }
+}
+
+void deleteNodeEnd(Node *&head){
+    if (head!=NULL){//make sure list exist
+        if (head->next==NULL){//if list has only 1 node
+            Node * temp =head;
+            head=NULL;
+            delete temp;
+        }
+        else {//more then onew node
+        Node *temp=head;
+        Node *prev=NULL;
+        while (temp->next!=NULL){
+            prev=temp;
+            temp=temp->next;
+        }
+        delete temp;
+        prev->next=NULL;
+        }
+    
+    }
+}
+
+void deleteNode(Node *&head,int x){
+    if (x==1){
+        Node *temp=head;
+        head=head->next;
+        delete temp;
+    }
+    else{
+        Node * current =head;
+        Node * prev =NULL;
+        x--;
+        while(x){
+            prev=current;
+            current=current->next;
+            x--;
+        }
+        prev->next=current->next;
+        delete current;
+    }
+}
+
 int main() {
     int arr[]={12,2,45,76,34};
     Node * head=CreateLinkedList(arr,5);
@@ -58,5 +107,11 @@ int main() {
     int x=3;
     int value=10;
     insert(head,x,value);
+    treverse(head);
+    deleteNodeStart(head);
+    treverse(head);
+    deleteNodeEnd(head);
+    treverse(head);
+    deleteNode(head,2);
     treverse(head);
 }
