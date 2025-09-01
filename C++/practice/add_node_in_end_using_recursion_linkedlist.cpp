@@ -98,6 +98,17 @@ void deleteNode(Node *&head,int x){
     }
 }
 
+void Min(Node *head){
+    Node *temp=head;
+    int ans =temp->data;
+    while (temp->next!=NULL){
+        ans =min(ans,temp->data);
+        temp=temp->next;
+    };
+    cout<<"minimum is : "<<ans<<endl;
+}
+
+
 int main() {
     int arr[]={12,2,45,76,34};
     Node * head=CreateLinkedList(arr,5);
@@ -114,4 +125,5 @@ int main() {
     treverse(head);
     deleteNode(head,2);
     treverse(head);
+    Min(head);
 }
