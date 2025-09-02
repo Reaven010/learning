@@ -35,6 +35,31 @@ bool areIdentical(Node*head1,Node*head2){
     }
     return (t1==NULL && t2==NULL);
 }
+//reverse
+Node *reverse(Node *head){
+    Node *curr=head;
+    Node *prev=head;
+    
+    if (head!=NULL){
+        while (head->next!=NULL){
+            head=head->next;
+            curr->next=prev;
+            prev=curr;
+            curr =head;
+        }
+        return head;
+    }
+}
+
+void treverse(Node *head){
+    Node *t=head;
+    while (t){
+        cout<<t->data;
+        t=t->next;
+    }
+}
+
+
 
 
 int main() {
@@ -48,4 +73,7 @@ int main() {
     else{
         cout<<"list is not identical"<<endl;
     }
+
+    head1=reverse(head1);
+    treverse(head1);
 }
