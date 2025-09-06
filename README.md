@@ -24,6 +24,8 @@ The repository is organized as follows:
 learning/
 │-- Python/
 │-- C++/
+│-- web_development/
+│-- java/
 ```
 Each folder contains practice exercises, notes, and sample projects related to the respective language.
 
