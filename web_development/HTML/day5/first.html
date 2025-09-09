@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>University Registration form </h1>
+    <p>please fill out the form</p>
+    <hr>
+
+    <form>
+        <h2>Personal details</h2>
+
+        <label for="fname">First Name</label>
+        <input type="text" name="first_name" id="fname" placeholder="e.g: arjun" required>
+        <br><br>
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="Last_name" id="lname" placeholder="e. g: Sharma">
+        <br><br>
+
+        <label for="dob">Date of birth</label>
+        <input type="date" name="dob" id="dob">
+        <br><br>
+        <h3>gender</h3>
+        <label for="male">male</label>
+        <input type="radio" name="gender" id="male" value="male"><br><br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female"><br><br>
+        <label for="other">other</label>
+        <input type="radio" name="gender" id="other" value="other"><br><br>
+        
+        <h3>upload your photo</h3>
+        <input type="file" name="file">
+        <hr>
+        <h2>Contact information</h2>
+        <label for="email">Email address</label>
+        <input type="email" name="email" id="email">
+        <br><br>
+
+        <label for="phone">Phone number</label>
+        <input type="tel" name="phone" id="phone">
+        <br><br>
+
+        <label for="address">mailing address</label><br>
+        <input type="Address" rows="10" cols="30" id="address">
+        <hr>
+
+        <h2>Academic information</h2>
+
+        <label for="cource">select your cource</label>
+        <select name="cource" id="cource">
+            <option value="cse">cse</option>
+            <option value="me">me</option>
+            <option value="ce">ce</option>
+        </select>
+
+        <br><br>
+        <h3>Extra carricular activities </h3>
+        <label for="sports">sports</label>
+        <input type="checkbox" name="intrest" id="sports" value="sports">
+        <br><br>
+        
+        <label for="music">music</label>
+        <input type="checkbox" name="intrest" id="music" value="music">
+        <br><br>
+        
+        <label for="technology">technology</label>
+        <input type="checkbox" name="intrest" id="technology" value="technology">
+        <br><br>
+        <hr>
+        <h2>create a account</h2>
+        <label for="pass"> create a password</label>
+        <input type="password" name="password" id="pass">
+        <!-- We prefer <button> because it's more flexible, semantic, and accessible. -->
+                <br><br>
+            <label for="secuq">security Question</label>
+            <select name="secq" id="secq">
+                <option value="roll_no">what is your roll_no</option>
+                <option value="pet_name">pet name</option>
+            </select>
+                <br><br>
+        <label for="secu">security answer</label>
+        <input type="text" name="sequrityans" id="secu">
+        <br><br>
+
+        <hr>
+        <label for="toc">i agree to the retms and condition</label>
+        <input type="checkbox" name="toc" id="toc" required>
+        
+        <br><br>
+        
+        <button type="submit">register</button>
+        <button type="reset">reset form</button>
+    
+    
+    </form>
+</body>
+</html>
