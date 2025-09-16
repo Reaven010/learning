@@ -1,0 +1,33 @@
+*{
+    background-color: black;
+}
+
+.container{
+    background-color: wheat;
+    display:flex ;
+    height: 400px;
+    flex-direction: row;
+    justify-content: end;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+.first{
+    flex-grow: 2;
+    background-color: orange;
+}
+
+.second{
+    flex-grow: 1;
+    background-color: aqua;
+    flex-basis:300px;
+}
+.third{
+    background-color: green;
+}
+
+.fourth{
+    background-color: pink;
+}

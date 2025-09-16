@@ -1,0 +1,25 @@
+*{
+    background-color: black;
+}
+.container{
+    background-color: red;
+    height: 200px;
+    width: 300px;
+    position:relative;
+}
+.obj1{
+    background-color: darkblue;
+    height:100px;
+    width:300px;
+    position: absolute;
+    top:50px;
+}
+.obj2{
+    background-color: white;
+    border-radius: 50%;
+    height:90px;
+    width:90px;
+    position: absolute;
+    left:100px;
+    top:55px;
+}
