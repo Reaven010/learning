@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    background-color: black;
+}
+.container{
+    display: grid;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    gap: 10px;
+}
+
+.first{
+    background-color: aqua;
+}
+.second{
+    background-color: red;
+}
+.third{
+    background-color: lime;
+}
+.fourth{
+    background-color: yellow;
+}

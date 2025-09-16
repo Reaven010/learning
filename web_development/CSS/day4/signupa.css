@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url("https://thumbs.dreamstime.com/b/samurai-sunset-cherry-blossoms-serene-scene-standing-under-vivid-colors-tranquil-landscape-create-354995039.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh; 
+}
+
+.card{
+    background-color: rgba(225, 225, 225, 0.2);
+    backdrop-filter: blur(10px);
+    height: 500px;
+    width:500px ;
+    border-radius: 20px;
+    z-index: 5;
+    
+}
+
+h1{
+    text-align: center;
+    margin: 10px;
+}
+
+p{
+    color: gray;
+    margin: 20px;
+}
+
+.name{
+    height: 25px;
+    margin: 20px;
+    justify-content: space-evenly;
+}
+.login{
+    width: 90%;
+}
+
+button{
+    background-color: rgb(164,99,93);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px;
+    width: 50%;
+    top: 40px;
+}
