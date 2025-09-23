@@ -9,8 +9,8 @@ body{
 }
 .container{
     display: grid;
-    grid-template-rows: 200px 200px;
-    grid-template-columns: 200px 200px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 

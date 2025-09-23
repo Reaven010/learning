@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*  example 2
+body{
+    background-color: black;
+    color: white;
+    font-size: 40px;
+}
+
+.container{
+    display: grid;
+    height:800px;
+    width: 800px;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.box{
+    background-color: aquamarine;
+}
+.header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.sidebar{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.content1{
+    grid-column: 2/4;
+}
+.footer{
+grid-column : 1/4;
+} */
+
+
+.container{
+    display: grid;
+    height: 800px;
+    width: 800px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+.box{
+    background-color: aquamarine;
+}
+
+.first{
+    grid-row: 1/4;
+}
+
+.second{
+    grid-column: 2/4;
+}
+.sixth{
+    grid-row: 2/4;
+    grid-column: 4/5;
+}

@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.sun{
+    background-color: orange;
+    box-shadow: 0 0 20px red;   
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.space{
+    height:100vh;
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: moving;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.mercury{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translateX(-200px);
+    background-color: gray;
+}
+.venus{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(40px,40px);
+    background-color: orange;
+}
+.earth{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(60px,80px);
+    background-color: skyblue;
+}
+.mars{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(50px,-80px);
+    background-color: red;
+}
+.jupiter{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(70px,-60px);
+    background-color: yellow;
+}
+.saturn{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(80px,200px);
+    background-color: yellow;
+}
+.uranus{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(200px,-200px);
+    background-color: yellow;
+}
+.naptune{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: translate(220px,180px);
+    background-color: darkblue;
+}
+
+@keyframes moving{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
