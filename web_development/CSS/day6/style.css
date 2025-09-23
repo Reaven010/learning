@@ -1,0 +1,32 @@
+.container{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    font-size: 60px;
+}
+/* this is for desktop first approach
+@media screen and (max-width: 900px){
+    .container{
+        background-color: pink;
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 500px){
+    .container{
+        background-color: red;
+        font-size: 20px;
+    }
+} */
+
+@media screen and (min-width:500px) {
+    .container{
+        background-color: pink;
+        font-size: 40px;
+    }
+}
+@media screen and (min-width:900px) {
+    .container{
+        background-color: red;
+        font-size: 20px;
+    }
+}

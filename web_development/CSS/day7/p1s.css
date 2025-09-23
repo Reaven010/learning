@@ -1,0 +1,40 @@
+*{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.514);
+    height: 200px;
+    width: 400px;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    border:1px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+}
+p{
+    margin-left: 100%;
+    animation-name: moving;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+
+}
+@keyframes moving {
+    from{
+        margin-left: 100%;
+
+    }
+    to{
+        margin-left: -200%;
+    }
+}
