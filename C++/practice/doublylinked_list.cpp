@@ -68,7 +68,32 @@ Node* insert_any_where(Node*head,int n,int pos){
     }
 }
 
-Node* delete_Node_anywhere(Node*head,int pos){}
+Node* delete_Node_anywhere(Node*head,int pos){
+    if(head!=NULL){
+        if(pos==0){
+            Node*temp=head;
+            head=head->next;
+            head->prev=NULL;
+            delete temp;
+        }
+        else{
+            Node*curr=head;
+            while(--pos){
+                curr=curr->next;
+            }
+            if(curr->next==NULL){
+                curr->prev->next=NULL;
+                delete curr;
+            }
+            else{
+                curr->prev->next=curr->next;
+                curr->next->prev=curr->prev;
+                delete curr;
+            }
+        }
+    }
+    return head;
+}
 
 int main() {
     int arr[4]={1,2,3,4};
@@ -78,5 +103,8 @@ int main() {
     treverse(head);
     cout<<"after inserrting 5 in second Position :-"<<endl;
     insert_any_where(head,5,2);
+    treverse(head);
+    cout<<"after deleting 3rd Position :- "<<endl;
+    delete_Node_anywhere(head,3);
     treverse(head);
 }
