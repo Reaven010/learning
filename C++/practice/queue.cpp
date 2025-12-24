@@ -3,49 +3,71 @@
 #include<climits>
 using namespace std;
 
-void enqueue(int arr[],int n,int size,int &front,int &rear){
-    if(rear==(size-1)){
-        cout<<"overflow condition"<<endl;
-    }
-    else if(front ==-1 ){
-        front=0;
-        rear=0;
-        arr[rear]=n;
-    }
-    else{
-        rear++;
-        arr[rear]=n;
-    }
-}
-void display(int arr[],int front,int rear){
-    for(int i=0;i<=rear;i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
-}
+class queue{
+    int *arr;
+    int front,rear;
+    int size;
+    public:
+        queue(int n){
+            arr=new int[n];
+            front=-1,rear=-1;
+            this->size=n;
+        }
 
-void dequeue(int arr[],int &front,int &rear,int size){
-    if (front==-1 || front>rear){
-        cout<<"underflow"<<endl;
-    }
-    else {
-        cout<<arr[front]<<endl;
-        for (int i=0;i<rear;i++){
-            arr[i]=arr[i+1];
-        };
-        arr[rear]=0;
-        rear--;
-        
-    }
-}
+        bool isfull(){
+            return rear==size-1;
+        }
+
+        bool isempty(){
+            return front==-1;
+        }
+
+        void push (int x){
+            if(isfull()){
+                cout<<"Queue overflow"<<endl;
+                return ;
+            }
+            else if(isempty()){
+                front =0,rear=0;
+                arr[rear]=x;
+            }
+            else{
+                rear++;
+                arr[rear]=x;
+            }
+        }
+
+        void pop(){
+            if(isempty()){
+                cout<<"cout underflow"<<endl;
+            }
+            else{
+                if(front==rear){
+                    front=-1,rear=-1;
+                }
+                else{
+                    front=front+1;
+                }
+            }
+        }
+        int start(){
+            if(isempty()){
+                cout<<"Queue is empty"<<endl;
+                return -1;
+            }
+            else{
+            return arr[front];
+            }
+        }
+};
 
 int main() {
-    int queue[7];
-    int front=-1,rear=-1;
-    enqueue(queue, 10, 7, front, rear);
-    enqueue(queue, 20, 7, front, rear);
-    dequeue(queue, front, rear, 7);
-    dequeue(queue, front, rear, 7);
-    enqueue(queue, 30, 7, front, rear);
-    dequeue(queue, front, rear, 7);
+    queue q(5);
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    cout<<q.start()<<endl;
+    q.pop();
+    cout<<q.start()<<endl;
+    cout<<"is queue empty " <<boolalpha<<q.isempty()<<endl;
 }
