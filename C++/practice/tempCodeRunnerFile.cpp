@@ -1,2 +1,0 @@
- // deleteNodeStart(head);
-    // treverse(head);
