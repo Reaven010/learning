@@ -36,6 +36,7 @@ def calculate_score(hand):
 deck =[]
 
 def shuffel_deck(deck):
+    deck=[]
     for suit in suits:
         for card in cards:
             deck.append(card + ' of ' + suit)
@@ -44,19 +45,19 @@ def shuffel_deck(deck):
 def deal_card(deck):
     card = deck.pop()
     return card
-main_deck =shuffel_deck(deck)
 play_again = True
 while (play_again):
+    main_deck =shuffel_deck(deck)
     player_hand,player_score =[],0
     dealer_hand,dealer_score=[],0
     player_hand.append(deal_card(main_deck))
     player_hand.append(deal_card(main_deck))
     dealer_hand.append(deal_card(main_deck))
+    player_score = calculate_score(player_hand)
+    dealer_score = calculate_score(dealer_hand)
     dealer_hand.append(deal_card(main_deck))
     print("Your hand: ", player_hand)
     print("Dealer's hand: ", dealer_hand[0], " and a hidden card")
-    player_score = calculate_score(player_hand)
-    dealer_score = calculate_score(dealer_hand)
     while player_score < 21:
         print("dealer score is : ",dealer_score)
         print("player score is : ",player_score)
