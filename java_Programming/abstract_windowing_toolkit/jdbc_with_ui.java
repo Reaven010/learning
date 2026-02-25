@@ -3,7 +3,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.*;
 class frame{
+    Connection connection;
+    Statement statement;
     frame(){
         Frame f=new Frame("Java DataBase Connectivity");
         f.setLayout(new FlowLayout());
@@ -22,6 +28,23 @@ class frame{
         f.add(b1);
         f.add(b2);
         f.add(b3);
+        try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+
+    connection = DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/trip",
+            "root",
+            ""
+    );
+
+    statement = connection.createStatement();
+
+    System.out.println("DATABASE CONNECTED SUCCESSFULLY");
+
+} catch (Exception e) {
+    System.out.println("DATABASE CONNECTION FAILED");
+    e.printStackTrace();
+}
         //window control added
         f.addWindowListener(new WindowListener() {
             @Override
@@ -50,19 +73,52 @@ class frame{
 
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e ){
+                try{
+                String id=t1.getText(); 
+                String name=t2.getText();
+                String age=t3.getText();
                 System.out.println("insert clicked");
+                String querry="insert into class_register (name,age,id) values("+"'"+ name +"'," + age + "," + id + " );";
+                System.out.println(querry);
+                statement.executeUpdate(querry);
+                }
+                catch(Exception a){
+                    a.printStackTrace();};
             }
         });
 
         b2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e ){
-                System.out.println("Update clicked");
+                try{
+                    System.out.println("Update clicked");
+                    String id=t1.getText(); 
+                    String name=t2.getText();
+                    String age=t3.getText();
+                    String querry="update class_register set name='"+ name +"',age="+age+" where id="+id+";";
+                    System.out.println(querry);
+                    statement.executeUpdate(querry);
+                }
+                catch(Exception a){
+                    System.out.println("connection failed");
+                }
             }
         });
 
         b3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e ){
-                System.out.println("delete clicked");
+                try{
+                    System.out.println("Update clicked");
+                    String id=t1.getText(); 
+                    String name=t2.getText();
+                    String age=t3.getText();
+                    System.out.println("delete clicked");
+                    String querry="delete from class_register where id="+id+";";
+                    System.out.println(querry);
+                    statement.executeUpdate(querry);
+                }
+                catch(Exception a){
+                    System.out.println("connection failed");
+                }
             }
         });
 
