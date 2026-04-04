@@ -5,11 +5,10 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 import java.sql.*;
 class frame{
     Connection connection;
-    Statement statement;
+    PreparedStatement statement;
     frame(){
         Frame f=new Frame("Java DataBase Connectivity");
         f.setLayout(new FlowLayout());
@@ -18,7 +17,8 @@ class frame{
         f.setVisible(true);
         Label l1=new Label("Id"),l2=new Label("Name"),l3=new Label("Age");
         TextField t1=new TextField(20),t2=new TextField(20),t3=new TextField(20);
-        Button b1=new Button("Insert"),b2=new Button("Update"),b3=new Button("Delete");
+        Button b1=new Button("Insert"),b2=new Button("Update"),b3=new Button("Delete"),b4=new Button("Display");
+        TextArea ta=new TextArea();
         f.add(l1);
         f.add(t1);
         f.add(l2);
@@ -28,6 +28,10 @@ class frame{
         f.add(b1);
         f.add(b2);
         f.add(b3);
+        f.add(b4);
+        //display section
+        f.add(ta);
+
         try {
     Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -36,8 +40,6 @@ class frame{
             "root",
             ""
     );
-
-    statement = connection.createStatement();
 
     System.out.println("DATABASE CONNECTED SUCCESSFULLY");
 
@@ -67,20 +69,25 @@ class frame{
             public void windowOpened(WindowEvent e) {}
 
         });
-
+        
 
         //adding button controls
 
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e ){
                 try{
-                String id=t1.getText(); 
-                String name=t2.getText();
-                String age=t3.getText();
+                String id=t1.getText().trim(); 
+                String name=t2.getText().trim();
+                String age=t3.getText().trim();
+                if(id.isEmpty()||name.isEmpty()||age.isEmpty()){
+                    ta.setText("fill all fields");
+                }
                 System.out.println("insert clicked");
-                String querry="insert into class_register (name,age,id) values("+"'"+ name +"'," + age + "," + id + " );";
-                System.out.println(querry);
-                statement.executeUpdate(querry);
+                statement=connection.prepareStatement("insert into class_register (name,age,id) values(?,?,?);");
+                statement.setInt(3, Integer.parseInt(id));
+                statement.setString(1, name);
+                statement.setInt(2, Integer.parseInt(age));
+                statement.executeUpdate();
                 }
                 catch(Exception a){
                     a.printStackTrace();};
@@ -91,12 +98,17 @@ class frame{
             public void actionPerformed(ActionEvent e ){
                 try{
                     System.out.println("Update clicked");
-                    String id=t1.getText(); 
-                    String name=t2.getText();
-                    String age=t3.getText();
-                    String querry="update class_register set name='"+ name +"',age="+age+" where id="+id+";";
-                    System.out.println(querry);
-                    statement.executeUpdate(querry);
+                    String id=t1.getText().trim(); 
+                    String name=t2.getText().trim();
+                    String age=t3.getText().trim();
+                    if(id.isEmpty()||name.isEmpty()||age.isEmpty()){
+                    ta.setText("fill all fields");
+                }
+                    statement=connection.prepareStatement("update class_register set name=?,age=? where id=?;");
+                    statement.setInt(3, Integer.parseInt(id));
+                    statement.setString(1, name);
+                    statement.setInt(2, Integer.parseInt(age));
+                    statement.executeUpdate();
                 }
                 catch(Exception a){
                     System.out.println("connection failed");
@@ -107,17 +119,34 @@ class frame{
         b3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e ){
                 try{
-                    System.out.println("Update clicked");
                     String id=t1.getText(); 
-                    String name=t2.getText();
-                    String age=t3.getText();
+                    if(id.isEmpty()){
+                        ta.setText("fill all fields");
+                    }
                     System.out.println("delete clicked");
-                    String querry="delete from class_register where id="+id+";";
-                    System.out.println(querry);
-                    statement.executeUpdate(querry);
+                    statement=connection.prepareStatement("delete from class_register where id=?;");
+                    statement.setInt(1,Integer.parseInt(id));
+                    statement.executeUpdate();
                 }
                 catch(Exception a){
                     System.out.println("connection failed");
+                }
+            }
+        });
+
+        b4.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                try{
+                    System.out.println("Display button clicked");
+                    statement=connection.prepareStatement( "SELECT * FROM class_register");
+                    ResultSet rs=statement.executeQuery();
+                    ta.setText("ID  \t Name \t Age \n");
+                    while(rs.next()){
+                        ta.append(rs.getInt("id")+"\t"+rs.getString("name")+"\t"+rs.getInt("age")+"\n");
+                    }
+                }
+                catch(Exception a){
+                    System.out.println(a);
                 }
             }
         });
